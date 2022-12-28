@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Events {
+  id                  Int            @id @default(autoincrement())
+  eventEthAddress     String         @unique @db.VarChar(255)
+  createrEthAddress   String         @unique @db.VarChar(255)
+  contractAddress     String         @unique @db.VarChar(255)
+  benificaryBloodBank String         @db.VarChar(255)
+  organization        String         @unique @db.VarChar(255)
+  eventName           String         @db.VarChar(255)
+  contactPerson       String         @db.VarChar(255)
+  contactNumber       String         @db.VarChar(255)
+  noOfTarget          Int
+  location            String         @db.VarChar(255)
+  latitude            Decimal
+  longitude           Decimal
+  startTimeStamp      DateTime
+  endTimeStamp        DateTime
+  eventPledgers       EventPledger[]
+}
+
+model EventPledger {
+  id                Int    @id @default(autoincrement())
+  pledgerEthAddress String @db.VarChar(255)
+  pledgerInfo       String @db.VarChar(255)
+  events            Events @relation(fields: [eventsId], references: [id])
+  eventsId          Int
+}
