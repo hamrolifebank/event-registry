@@ -22,17 +22,17 @@ Content-Type: application/json
 
 {
     "eventEthAddress": "a;lskdjfwpoeirut29084576",
-        "createrEthAddress": "wpioreyu(*^&*%q;krtj",
-        "contractAddress": "pwirtu0298347z.mfnnvb",
-        "benificaryBloodBank": "Red cressent society",
-        "organization": "Samata foundation",
-        "eventName": "Samata blood donation camp",
-        "contactPerson": "Sukmit Gurung",
-        "contactNumber": "12345567",
-        "noOfTarget": 150,
-        "location": "Boudha",
-        "latitude": "27.721409",
-        "longitude": "85.36192",
-        "startTimeStamp": "2023-03-01T03:15:00.000Z",
-        "endTimeStamp": "2023-02-28T23:45:00.000Z"
+    "createrEthAddress": "wpioreyu(*^&*%q;krtj",
+    "contractAddress": "pwirtu0298347z.mfnnvb",
+    "benificaryBloodBank": "Red cressent society",
+    "organization": "Samata foundation",
+    "eventName": "Samata blood donation camp",
+    "contactPerson": "Sukmit Gurung",
+    "contactNumber": "12345567",
+    "noOfTarget": 150,
+    "location": "Boudha",
+    "latitude": "27.721409",
+    "longitude": "85.36192",
+    "startTimeStamp": "2023-03-01T03:15:00.000Z",
+    "endTimeStamp": "2023-02-28T23:45:00.000Z"
 }

@@ -64,7 +64,7 @@ eventsRouter.get("/:id/pledgers", async (req, res, next) => {
   try {
     const id = req.params.id;
 
-    const pledgerDoner = await prisma.events.findUnique({
+    const particularEventInfo = await prisma.events.findUnique({
       where: {
         id: Number(id),
       },
@@ -73,7 +73,9 @@ eventsRouter.get("/:id/pledgers", async (req, res, next) => {
       },
     });
 
-    res.status(200).json(pledgerDoner);
+    const particularEventPledgers = particularEventInfo.eventPledgers;
+
+    res.status(200).json(particularEventPledgers);
   } catch (error) {
     next(error);
   }
