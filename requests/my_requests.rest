@@ -1,7 +1,7 @@
 GET http://localhost:5000/api/events
 
 ###
-GET http://localhost:5000/api/events/1/pledgers
+GET http://localhost:5000/api/events/3/pledgers
 
 ###
 GET http://localhost:5000/api/eventPledgers
@@ -11,8 +11,8 @@ POST http://localhost:5000/api/eventPledgers/register
 Content-Type: application/json
 
 {
-    "pledgerEthAddress": "wpiotujglk;fjwopi",
-    "pledgerInfo": "Kumari",
+    "pledgerEthAddress": "wpoirtuy@#$%^opi",
+    "pledgerInfo": "Rasmika",
     "eventsId": 3
 }
 

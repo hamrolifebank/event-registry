@@ -64,18 +64,13 @@ eventsRouter.get("/:id/pledgers", async (req, res, next) => {
   try {
     const id = req.params.id;
 
-    const particularEventInfo = await prisma.events.findUnique({
+    const singleEventPlegders = await prisma.eventPledger.findMany({
       where: {
-        id: Number(id),
-      },
-      include: {
-        eventPledgers: true,
+        eventsId: Number(id),
       },
     });
 
-    const particularEventPledgers = particularEventInfo.eventPledgers;
-
-    res.status(200).json(particularEventPledgers);
+    res.status(200).json(singleEventPlegders);
   } catch (error) {
     next(error);
   }
