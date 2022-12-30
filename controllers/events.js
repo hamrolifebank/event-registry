@@ -60,4 +60,23 @@ eventsRouter.post("/register", async (req, res, next) => {
   }
 });
 
+eventsRouter.get("/:id/pledgers", async (req, res, next) => {
+  try {
+    const id = req.params.id;
+
+    const pledgerDoner = await prisma.events.findUnique({
+      where: {
+        id: Number(id),
+      },
+      include: {
+        eventPledgers: true,
+      },
+    });
+
+    res.status(200).json(pledgerDoner);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = eventsRouter;

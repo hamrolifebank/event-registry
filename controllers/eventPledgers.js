@@ -28,7 +28,6 @@ eventPledgers.post("/register", async (req, res, next) => {
         eventsId,
       },
     });
-    console.log(newEventPledgers);
     res.status(201).json(newEventPledgers);
   } catch (error) {
     next(error);
