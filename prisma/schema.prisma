@@ -12,11 +12,11 @@ datasource db {
 
 model Events {
   id                  Int            @id @default(autoincrement())
-  eventEthAddress     String         @unique @db.VarChar(255)
-  createrEthAddress   String         @unique @db.VarChar(255)
-  contractAddress     String         @unique @db.VarChar(255)
+  eventEthAddress     String         @db.VarChar(255)
+  createrEthAddress   String         @db.VarChar(255)
+  contractAddress     String         @db.VarChar(255)
   benificaryBloodBank String         @db.VarChar(255)
-  organization        String         @unique @db.VarChar(255)
+  organization        String         @db.VarChar(255)
   eventName           String         @db.VarChar(255)
   contactPerson       String         @db.VarChar(255)
   contactNumber       String         @db.VarChar(255)
