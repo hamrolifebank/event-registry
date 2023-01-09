@@ -14,7 +14,7 @@ model Events {
   id                  Int            @id @default(autoincrement())
   eventEthAddress     String         @db.VarChar(255)
   createrEthAddress   String         @db.VarChar(255)
-  contractAddress     String         @db.VarChar(255)
+  contractAddress     String?        @db.VarChar(255)
   benificaryBloodBank String         @db.VarChar(255)
   organization        String         @db.VarChar(255)
   eventName           String         @db.VarChar(255)
