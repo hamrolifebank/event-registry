@@ -78,7 +78,6 @@ eventsRouter.get("/:id/pledgers", async (req, res, next) => {
 
 eventsRouter.put("/edit/:id", async (req, res, next) => {
   try {
-    console.log("from api", req.body);
     const updatedEvent = await prisma.events.update({
       where: {
         id: Number(req.params.id),
