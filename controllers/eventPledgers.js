@@ -20,7 +20,6 @@ eventPledgers.get("/", async (req, res, next) => {
 eventPledgers.post("/register", async (req, res, next) => {
   try {
     const { pledgerEthAddress, pledgerInfo, eventsId } = req.body;
-
     const newEventPledgers = await prisma.eventPledger.create({
       data: {
         pledgerEthAddress,
