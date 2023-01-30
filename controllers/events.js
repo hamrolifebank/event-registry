@@ -76,4 +76,31 @@ eventsRouter.get("/:id/pledgers", async (req, res, next) => {
   }
 });
 
+eventsRouter.put("/edit/:id", async (req, res, next) => {
+  try {
+    const updatedEvent = await prisma.events.update({
+      where: {
+        id: Number(req.params.id),
+      },
+      data: req.body,
+    });
+    res.status(200).json(updatedEvent);
+  } catch (error) {
+    return res.status(400).json({ success: false });
+  }
+});
+eventsRouter.delete("/delete/:id", async (req, res, next) => {
+  try {
+    const deletedEvent = await prisma.events.delete({
+      where: {
+        id: Number(req.params.id),
+      },
+    });
+
+    res.status(200).json(deletedEvent);
+  } catch (error) {
+    res.status(400).json({ success: false });
+  }
+});
+
 module.exports = eventsRouter;
