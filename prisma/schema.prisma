@@ -32,7 +32,7 @@ model Events {
 model EventPledger {
   id                Int    @id @default(autoincrement())
   pledgerEthAddress String @db.VarChar(255)
-  pledgerInfo       String @db.VarChar(255)
+  pledgerInfo       String @db.VarChar(2000)
   events            Events @relation(fields: [eventsId], references: [id])
   eventsId          Int
 }

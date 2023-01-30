@@ -1,5 +1,5 @@
 const express = require("express");
-
+const cors = require("cors");
 const eventsRouter = require("./controllers/events");
 const eventPledgers = require("./controllers/eventPledgers");
 const middleware = require("./utils/middleware");
@@ -7,6 +7,7 @@ const config = require("./utils/config");
 const logger = require("./utils/logger");
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 
